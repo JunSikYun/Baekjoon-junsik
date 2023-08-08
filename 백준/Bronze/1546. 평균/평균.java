@@ -1,22 +1,23 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int count=sc.nextInt();
-        int[] num=new int[count];
+        int size=sc.nextInt();
+        int[] list=new int[size];
         int tmp=0;
-        for(int i=0;i<count;i++) {
-        	num[i]=sc.nextInt();
-        	if(tmp<num[i]) {
-        		tmp=num[i];
+        for(int i=0;i<size;i++) {
+        	list[i]=sc.nextInt();
+        	if(tmp<list[i]) {
+        		tmp=list[i];
         	}
         }
-        double[] num2=new double[count];
+        double[] result=new double[size];
         double sum=0;
-        for(int i=0;i<num2.length;i++) {
-        	num2[i]=(double)(num[i]*100)/tmp;
-        	sum+=num2[i];
+        for(int i=0;i<size;i++) {
+        	result[i]=(Double.valueOf(list[i])/Double.valueOf(tmp))*100;
+        	sum+=result[i];
         }
-        System.out.println(sum/count);
+        System.out.println(sum/size);
     }
 }
